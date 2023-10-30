@@ -64,4 +64,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Dominik Jurkovic @dominiccdj
 
-This Readme file was created with some help of AI <3 
+This Readme file was created with some help from AI, but the code was written by me. :) 
