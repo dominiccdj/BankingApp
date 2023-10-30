@@ -1,6 +1,5 @@
 package com.bankingapp.service;
 
-import com.bankingapp.exception.FileAlreadyExistsException;
 import com.bankingapp.model.AccountHolder;
 import com.bankingapp.model.AccountHolderStatus;
 import com.bankingapp.repository.AccountHolderRepository;
@@ -48,7 +47,7 @@ public class AccountHolderServiceImpl implements AccountHolderService {
             val result = accountHolderRepository.save(accountHolder);
             try {
                 accountHolderFileService.writeAccountHolderToFile(result);
-            } catch (IOException | FileAlreadyExistsException e) {
+            } catch (IOException e) {
                 accountHolderRepository.deleteAccountHolderByOib(accountHolder.getOib());
                 throw new ResponseStatusException(
                         HttpStatus.CONFLICT,
@@ -87,6 +86,5 @@ public class AccountHolderServiceImpl implements AccountHolderService {
             );
         }
         accountHolderRepository.save(accountHolder);
-
     }
 }
