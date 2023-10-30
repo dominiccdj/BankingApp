@@ -37,11 +37,9 @@ The Banking Application is a Spring-based Java application that provides service
 
 2. Open the project in your favorite Java development environment (e.g., IntelliJ IDEA, Eclipse).
 
-3. Ensure you have the necessary dependencies in your `pom.xml` file, including Spring Boot, Spring Data, ModelMapper, and any other required libraries.
+3. Run the application as a Spring Boot application.
 
-4. Run the application as a Spring Boot application.
-
-5. Access the API via the defined endpoints, e.g., `http://localhost:8080/account-holder`.
+4. Access the API via the defined endpoints, e.g., `http://localhost:8080/account-holder`.
 
 ## API Endpoints
 
