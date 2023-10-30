@@ -46,7 +46,18 @@ The Banking Application is a Spring-based Java application that provides service
 - `GET /account-holder`: Retrieve a list of all active account holders.
 - `GET /account-holder/{oib}`: Retrieve an active account holder by their OIB.
 - `PUT /account-holder`: Create a new account holder and create an acount holder file for that account in project root.
+JSON object schema:
+```
+{
+  "firstName": "Tom",
+  "lastName": "Jones",
+  "oib": "12345678900", (has to be 11 characters long)
+  "status": "ACTIVE" (optional parameter)
+}
+```
 - `DELETE /account-holder/{oib}`: Deactivate an account holder by their OIB and deactivate their acount holder file.
+
+  Swagger UI on http://localhost:8080/swagger-ui/index.html can give you some more info about endpoints (although it generated too much stuff, app doesn't have that many controllers, actual endpoints are found under `account-holder-controller`)
 
 ## Testing
 
