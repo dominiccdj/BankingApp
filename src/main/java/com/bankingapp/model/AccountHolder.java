@@ -14,5 +14,12 @@ public class AccountHolder {
     private String lastName;
     @Column(unique = true)
     private String oib;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private AccountHolderStatus status;
+
+    @Override
+    public String toString() {
+        return firstName + "," + lastName + "," + oib + "," + getStatus();
+    }
 }
+

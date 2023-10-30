@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface AccountHolderService {
 
-    AccountHolder getAccountHolderByOib(String oib);
+    AccountHolder getActiveAccountHolderByOib(String oib);
 
-    List<AccountHolder> getAllAccountHolders();
+    List<AccountHolder> getAllActiveAccountHolders();
 
     AccountHolder saveAccountHolder(AccountHolder accountHolder);
 
-    void deleteAccountHolderByOib(String oib);
+    void deactivateAccountHolderByOib(String oib);
 }

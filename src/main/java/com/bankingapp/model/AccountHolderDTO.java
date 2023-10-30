@@ -15,5 +15,5 @@ public class AccountHolderDTO {
     @NotEmpty
     @Size(min = 11, max = 11, message = "OIB should have exactly 11 characters")
     private String oib;
-    private String status = "";
+    private AccountHolderStatus status = AccountHolderStatus.ACTIVE;
 }

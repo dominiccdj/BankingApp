@@ -24,7 +24,7 @@ public class AccountHolderController {
 
     @GetMapping
     public List<AccountHolderDTO> getAllAccountHolders() {
-        return accountHolderService.getAllAccountHolders()
+        return accountHolderService.getAllActiveAccountHolders()
                 .stream()
                 .map(accountHolder -> modelMapper.map(accountHolder, AccountHolderDTO.class))
                 .collect(Collectors.toList());
@@ -33,7 +33,7 @@ public class AccountHolderController {
     @GetMapping("/{oib}")
     public AccountHolderDTO getAccountHolderByOib(@PathVariable String oib) {
         return modelMapper.map(
-                accountHolderService.getAccountHolderByOib(oib),
+                accountHolderService.getActiveAccountHolderByOib(oib),
                 AccountHolderDTO.class
         );
     }
@@ -48,7 +48,7 @@ public class AccountHolderController {
     @DeleteMapping("/{oib}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAccountHolderByOib(@PathVariable String oib) {
-        accountHolderService.deleteAccountHolderByOib(oib);
+        accountHolderService.deactivateAccountHolderByOib(oib);
     }
 
 }
