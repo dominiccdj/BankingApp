@@ -37,7 +37,7 @@ public class AccountHolderController {
         );
     }
 
-    @PutMapping
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public AccountHolderDTO createAccountHolder(@RequestBody @Validated AccountHolderDTO accountHolderDTO) {
         AccountHolder createdAccountHolder = accountHolderService.saveAccountHolder(modelMapper.map(accountHolderDTO, AccountHolder.class));
